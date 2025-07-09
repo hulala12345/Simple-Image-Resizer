@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Resizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simple Image Resizer</h1>
+    <input type="file" id="upload" accept="image/*">
+
+    <div id="editor">
+        <div id="canvas-wrapper">
+            <canvas id="imageCanvas"></canvas>
+            <canvas id="overlayCanvas"></canvas>
+        </div>
+        <div id="controls">
+            <div class="control-group">
+                <label>Presets:</label>
+                <select id="presetSize">
+                    <option value="">Select</option>
+                    <option value="640x480">640x480</option>
+                    <option value="800x600">800x600</option>
+                    <option value="1024x768">1024x768</option>
+                </select>
+                <label>Width:</label>
+                <input type="number" id="widthInput" min="1">
+                <label>Height:</label>
+                <input type="number" id="heightInput" min="1">
+                <button id="applyResize">Resize</button>
+            </div>
+            <div class="control-group">
+                <button id="startCrop">Start Crop</button>
+                <button id="applyCrop">Apply Crop</button>
+            </div>
+            <div class="control-group">
+                <label>Rotation:</label>
+                <select id="rotation">
+                    <option value="0">0°</option>
+                    <option value="90">90°</option>
+                    <option value="180">180°</option>
+                    <option value="270">270°</option>
+                </select>
+                <button id="flipH">Flip H</button>
+                <button id="flipV">Flip V</button>
+            </div>
+            <div class="control-group">
+                <label>Brightness</label>
+                <input type="range" id="brightness" min="0" max="200" value="100">
+                <label>Contrast</label>
+                <input type="range" id="contrast" min="0" max="200" value="100">
+                <label>Saturation</label>
+                <input type="range" id="saturation" min="0" max="200" value="100">
+            </div>
+            <div class="control-group">
+                <label><input type="checkbox" id="grayscale"> Grayscale</label>
+                <label><input type="checkbox" id="sepia"> Sepia</label>
+            </div>
+            <div class="control-group">
+                <button id="downloadPNG">Download PNG</button>
+                <button id="downloadJPEG">Download JPEG</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
